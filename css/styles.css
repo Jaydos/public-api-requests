@@ -90,7 +90,7 @@ header h1 {
     background: rgba(245, 245, 245, 0.9);
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
-    transition: .4s ease-out;
+    transition: all .4s ease-out;
     overflow: hidden;
 }
 
@@ -130,7 +130,6 @@ header h1 {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
 }
 
 .modal {
@@ -250,6 +249,8 @@ header h1 {
     .card:hover {
         background: rgba(255, 255, 255, 1);
         border: 1px solid rgba(50, 50, 50, 0.9);
+        transform: scale(1.05);
+        
     }
 
     .card:hover .card-text {
