@@ -1,5 +1,5 @@
 # public-api-requests
-TeamTreehouse project ... :An app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world.
+TeamTreehouse project 5 : An app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world.
 
 Had some trouble with the exceeds expectations requirement of adding buttons to navigate through modal windows. The roadblock was getting data types mixed up ('0' compared to 0) but got through it in the end.
 
