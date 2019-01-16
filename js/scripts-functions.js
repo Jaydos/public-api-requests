@@ -18,12 +18,13 @@ const generateProfile = profileData => {
 const addClickListeners = (profiles, data) => {
     profiles.forEach(profile => {
         profile.addEventListener('click', (e) => {
-            displayModal(e.currentTarget.id, data);
+            displayModal(parseInt(e.currentTarget.id), data);
         })
     })
 }
 
 const displayModal = (clickedProfile, data) => {
+    console.log(typeof clickedProfile);
     let modalContainer = document.createElement('div');
     modalContainer.className = 'modal-container';
 
@@ -52,26 +53,35 @@ const displayModal = (clickedProfile, data) => {
     })
 
     let buttons = document.querySelectorAll('.modal-btn-container button');
-
-    if(clickedProfile === '0' && filteredProfiles.length === 1){
+    if(clickedProfile === 0 && data.length === 1){
         buttons[0].style.visibility = 'hidden';
         buttons[1].style.visibility = 'hidden';
-    } else if (clickedProfile === '0'){
+    } else if (clickedProfile === 0){
         buttons[0].style.visibility = 'hidden';
         buttons[1].style.visibility = 'visible';
-    } else if (clickedProfile === '11'){
+    } else if (clickedProfile === data.length -1){
         buttons[0].style.visibility = 'visible';
         buttons[1].style.visibility = 'hidden';
     }
 
     buttons.forEach(button => {
         button.addEventListener('click', e => {
-            
+
+            if(clickedProfile === 0 && data.length === 1){
+                buttons[0].style.visibility = 'hidden';
+                buttons[1].style.visibility = 'hidden';
+            } else if (clickedProfile === 0){
+                buttons[0].style.visibility = 'hidden';
+                buttons[1].style.visibility = 'visible';
+            } else if (clickedProfile === data.length -1){
+                buttons[0].style.visibility = 'visible';
+                buttons[1].style.visibility = 'hidden';
+            }
             document.querySelector('body').removeChild(modalContainer);
             if(e.target.textContent === 'Next'){
-                displayModal(parseInt(clickedProfile) + 1, data);
+                displayModal(clickedProfile + 1, data);
             } else if (e.target.textContent === 'Prev'){
-                displayModal(parseInt(clickedProfile) - 1, data);
+                displayModal(clickedProfile - 1, data);
             }
         })
     })
